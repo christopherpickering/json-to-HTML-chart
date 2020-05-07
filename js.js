@@ -116,8 +116,6 @@ a = {
   }
 };
 
-
-//https://cssgraphs.netlify.app/
 var d = document;
 
 var dest = document.getElementsByClassName('chart')[0];
@@ -236,7 +234,7 @@ table.innerHTML += html;
 html = '<div class="chart-ticks">';
 console.log(axii)
 for (var a in axii) {
-  var style = (Math.floor(a / 2) + 1) * 70;
+  var style = (Math.floor(a / 2) + 1) * 50;
   var side = a % 2 == 1 ? 'right' : 'left';
   if (typeof axis[a] != 'undefined') {
     html += '<div class="chart-yAxisTitle" style="' + side + ':-' + style + 'px"><p>' + axis[a].title + '</p></div>'
@@ -248,7 +246,7 @@ var ticks = parseInt(height / 50);
 for (var x = 1; x <= ticks; x++) {
   html += '<div class="chart-ticksTick">'
   for (var a in range) {
-    var style = (Math.floor(a / 2) + 1) * (a % 2 == 1 ? 25 : 50);
+    var style = (Math.floor(a / 2) + 1) * (a % 2 == 1 ? 25 : 25) + (Math.floor(a / 2) > 0 ? 30 : 0);
     var side = a % 2 == 1 ? 'right' : 'left';
     html += '<p style="' + side + ':-' + style + 'px">' + Math.round((range[a] / x)) + '</p>'
   }
